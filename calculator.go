@@ -113,11 +113,19 @@ func arabToRome(number int) string {
 
 func sum(firstNum string, secondNum string) interface{} {
 	if detector(firstNum) && detector(secondNum) {
+		if romeToArab(firstNum) < 1 || romeToArab(firstNum) > 10 || romeToArab(secondNum) < 1 || romeToArab(secondNum) < 10 {
+			err := errors.New("выдача паники, число не должно быть < 1 или > 10")
+			return err
+		}
 		result := romeToArab(firstNum) + romeToArab(secondNum)
 		return arabToRome(result)
 	} else if detector(firstNum) == false && detector(secondNum) == false {
 		firstNumInt, _ := strconv.Atoi(firstNum)
 		secondNumInt, _ := strconv.Atoi(secondNum)
+		if firstNumInt < 1 || firstNumInt > 10 || secondNumInt < 1 || secondNumInt > 10 {
+			err := errors.New("выдача паники, число не должно быть < 1 или > 10")
+			return err
+		}
 		result := firstNumInt + secondNumInt
 		return result
 	}
@@ -127,6 +135,10 @@ func sum(firstNum string, secondNum string) interface{} {
 
 func sub(firstNum string, secondNum string) interface{} {
 	if detector(firstNum) && detector(secondNum) {
+		if romeToArab(firstNum) < 1 || romeToArab(firstNum) > 10 || romeToArab(secondNum) < 1 || romeToArab(secondNum) < 10 {
+			err := errors.New("выдача паники, число не должно быть < 1 или > 10")
+			return err
+		}
 		result := romeToArab(firstNum) - romeToArab(secondNum)
 		if result <= 0 {
 			err := errors.New("выдача паники, так как в римской системе нет отрицательных чисел")
@@ -136,6 +148,10 @@ func sub(firstNum string, secondNum string) interface{} {
 	} else if !(detector(firstNum) && detector(secondNum)) {
 		firstNumInt, _ := strconv.Atoi(firstNum)
 		secondNumInt, _ := strconv.Atoi(secondNum)
+		if firstNumInt < 1 || firstNumInt > 10 || secondNumInt < 1 || secondNumInt > 10 {
+			err := errors.New("выдача паники, число не должно быть < 1 или > 10")
+			return err
+		}
 		result := firstNumInt - secondNumInt
 		return result
 	}
@@ -145,11 +161,19 @@ func sub(firstNum string, secondNum string) interface{} {
 
 func multiply(firstNum string, secondNum string) interface{} {
 	if detector(firstNum) && detector(secondNum) {
+		if romeToArab(firstNum) < 1 || romeToArab(firstNum) > 10 || romeToArab(secondNum) < 1 || romeToArab(secondNum) < 10 {
+			err := errors.New("выдача паники, число не должно быть < 1 или > 10")
+			return err
+		}
 		result := romeToArab(firstNum) * romeToArab(secondNum)
 		return arabToRome(result)
 	} else if !(detector(firstNum) && detector(secondNum)) {
 		firstNumInt, _ := strconv.Atoi(firstNum)
 		secondNumInt, _ := strconv.Atoi(secondNum)
+		if firstNumInt < 1 || firstNumInt > 10 || secondNumInt < 1 || secondNumInt > 10 {
+			err := errors.New("выдача паники, число не должно быть < 1 или > 10")
+			return err
+		}
 		result := firstNumInt * secondNumInt
 		return result
 	}
@@ -159,11 +183,19 @@ func multiply(firstNum string, secondNum string) interface{} {
 
 func divide(firstNum string, secondNum string) interface{} {
 	if detector(firstNum) && detector(secondNum) {
+		if romeToArab(firstNum) < 1 || romeToArab(firstNum) > 10 || romeToArab(secondNum) < 1 || romeToArab(secondNum) < 10 {
+			err := errors.New("выдача паники, число не должно быть < 1 или > 10")
+			return err
+		}
 		result := romeToArab(firstNum) / romeToArab(secondNum)
 		return arabToRome(result)
 	} else if !(detector(firstNum) && detector(secondNum)) {
 		firstNumInt, _ := strconv.Atoi(firstNum)
 		secondNumInt, _ := strconv.Atoi(secondNum)
+		if firstNumInt < 1 || firstNumInt > 10 || secondNumInt < 1 || secondNumInt > 10 {
+			err := errors.New("выдача паники, число не должно быть < 1 или > 10")
+			return err
+		}
 		result := firstNumInt / secondNumInt
 		return result
 	}
